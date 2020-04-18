@@ -1,9 +1,9 @@
 import React from 'react';
 
 function Grade(props) {
-  const name = props.name;
-  const course = props.course;
-  const grade = props.grade;
+  const name = props.grade.name;
+  const course = props.grade.course;
+  const grade = props.grade.grade;
   return (
     <tr>
       <td>{name}</td>
