@@ -1,0 +1,112 @@
+{
+  "name": "sgt-react",
+  "version": "1.0.0",
+  "description": "The Student Grade Table: Written in React",
+  "main": "server/index.js",
+  "scripts": {
+    "client": "webpack-dev-server",
+    "start": "node server/index.js",
+    "build": "webpack --mode=production",
+    "dev": "npm-run-all --silent --parallel start client"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "json-server": "0.15.1",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.7.7",
+    "@babel/plugin-transform-react-jsx": "7.7.7",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "8.0.6",
+    "eslint": "6.8.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-standard": "4.0.1",
+    "husky": "3.1.0",
+    "lint-staged": "9.5.0",
+    "npm-run-all": "4.1.5",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.10.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Learning-Fuze/sgt-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Learning-Fuze/sgt-react/issues"
+  },
+  "homepage": "https://github.com/Learning-Fuze/sgt-react#readme",
+  "eslintIgnore": [
+    "server/public/main.js"
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parser": "babel-eslint",
+    "extends": [
+      "plugin:react/recommended",
+      "eslint:recommended",
+      "standard"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "padded-blocks": 0,
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "curly": [
+        "error",
+        "multi-line"
+      ],
+      "no-console": [
+        "error",
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "react/prop-types": 0,
+      "react/react-in-jsx-scope": 0
+    }
+  }
+}
