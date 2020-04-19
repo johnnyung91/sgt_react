@@ -4,10 +4,10 @@ class Header extends React.Component {
   render() {
     return (
       <div className="row align-items-center mt-2">
-        <div className="col-lg-9">
+        <div className="col-lg-8">
           <h1>{this.props.heading}</h1>
         </div>
-        <div className="col-lg-3 text-right">
+        <div className="col-lg-4 text-right">
           <h3>
             {this.props.averageHeading}
             <span className="badge badge-secondary">
