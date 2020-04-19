@@ -8,6 +8,27 @@ class GradeForm extends React.Component {
       course: '',
       grade: ''
     };
+    this.handleName = this.handleName.bind(this);
+    this.handleCourse = this.handleCourse.bind(this);
+    this.handleGrade = this.handleGrade.bind(this);
+  }
+
+  handleName(event) {
+    this.setState({
+      name: event.target.value
+    });
+  }
+
+  handleCourse(event) {
+    this.setState({
+      course: event.target.value
+    });
+  }
+
+  handleGrade(event) {
+    this.setState({
+      grade: event.target.value
+    });
   }
 
   render() {
@@ -24,6 +45,7 @@ class GradeForm extends React.Component {
             id="student-name-course"
             placeholder="Student Course"
             name="course"
+            onChange={this.handleName}
           />
         </div>
         <div className="input-group mb-3">
@@ -36,6 +58,7 @@ class GradeForm extends React.Component {
             id="student-name-course"
             placeholder="Student Course"
             name="course"
+            onChange={this.handleCourse}
           />
         </div>
         <div className="input-group mb-3">
@@ -48,6 +71,7 @@ class GradeForm extends React.Component {
             id="student-name-grade"
             placeholder="Student Grade"
             name="grade"
+            onChange={this.handleGrade}
           />
         </div>
         <div className="input-buttons">
