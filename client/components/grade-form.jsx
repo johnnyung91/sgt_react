@@ -11,6 +11,7 @@ class GradeForm extends React.Component {
     this.handleName = this.handleName.bind(this);
     this.handleCourse = this.handleCourse.bind(this);
     this.handleGrade = this.handleGrade.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
   }
 
   handleName(event) {
@@ -31,9 +32,24 @@ class GradeForm extends React.Component {
     });
   }
 
+  handleAdd(event) {
+    event.preventDefault();
+    const newGrade = {
+      name: this.state.name,
+      course: this.state.course,
+      grade: this.state.grade
+    };
+    this.props.onSubmit(newGrade);
+    this.setState({
+      name: '',
+      course: '',
+      grade: ''
+    });
+  }
+
   render() {
     return (
-      <form action="">
+      <form onSubmit={this.handleAdd}>
         <h3 className="mb-2">Add Student</h3>
         <div className="input-group mb-3">
           <div className="input-group-prepend">

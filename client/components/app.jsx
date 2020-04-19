@@ -22,7 +22,8 @@ class App extends React.Component {
 
   getAverageGrade() {
     const allGrades = this.state.grades;
-    const total = allGrades.reduce((max, cur) => max + cur.grade, 0);
+    let total = 0;
+    total = allGrades.reduce((max, cur) => max + cur.grade, 0);
     const average = (total / allGrades.length).toFixed(0);
     return average;
   }
@@ -38,8 +39,9 @@ class App extends React.Component {
 
     fetch('api/grades', req)
       .then(res => res.json())
-      // eslint-disable-next-line no-console
-      .then(dataNewGrade => console.log(dataNewGrade))
+      .then(dataNewGrade => this.setState({
+        grades: this.state.grades.concat(dataNewGrade)
+      }))
       .catch(err => console.error(err));
   }
 
@@ -53,7 +55,7 @@ class App extends React.Component {
             <GradeTable grades={this.state.grades}/>
           </div>
           <div className="col-lg-3">
-            <GradeForm />
+            <GradeForm onSubmit={this.addGrade}/>
           </div>
         </div>
       </div>
