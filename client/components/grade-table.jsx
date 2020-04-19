@@ -9,6 +9,9 @@ function Grade(props) {
       <td>{name}</td>
       <td>{course}</td>
       <td>{grade}</td>
+      <td>
+        <button className="btn btn-danger">Delete</button>
+      </td>
     </tr>
   );
 }
@@ -23,6 +26,7 @@ class GradeTable extends React.Component {
             <th scope='col'>Student Name</th>
             <th scope='col'>Student Course</th>
             <th scope='col'>Grade</th>
+            <th scope='col'>Operations</th>
           </tr>
         </thead>
         <tbody>
