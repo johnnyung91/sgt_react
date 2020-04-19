@@ -1,13 +1,22 @@
 import React from 'react';
 
 class GradeForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      course: '',
+      grade: ''
+    };
+  }
+
   render() {
     return (
       <form action="">
-        <h3>Add Student</h3>
+        <h3 className="mb-2">Add Student</h3>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
-            <span className="input-group-text"></span>
+            <span className="input-group-text"><i className="fa fa-user"></i></span>
           </div>
           <input
             type="text"
@@ -19,7 +28,7 @@ class GradeForm extends React.Component {
         </div>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
-            <span className="input-group-text"></span>
+            <span className="input-group-text"><i className="fa fa-list"></i></span>
           </div>
           <input
             type="text"
@@ -31,7 +40,7 @@ class GradeForm extends React.Component {
         </div>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
-            <span className="input-group-text"></span>
+            <span className="input-group-text"><i className="fa fa-graduation-cap"></i></span>
           </div>
           <input
             type="text"
@@ -42,7 +51,7 @@ class GradeForm extends React.Component {
           />
         </div>
         <div className="input-buttons">
-          <input className="btn btn-success" type="submit" value="Add" />
+          <input className="btn btn-success mr-2" type="submit" value="Add" />
           <input className="btn btn-outline-secondary" type="reset" value="Cancel" />
         </div>
       </form>
