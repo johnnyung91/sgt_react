@@ -10,7 +10,7 @@ function Grade(props) {
       <td>{course}</td>
       <td>{grade}</td>
       <td>
-        <button className="btn btn-danger">Delete</button>
+        <button className="btn btn-danger" onClick={props.onDelete}>Delete</button>
       </td>
     </tr>
   );
@@ -18,7 +18,7 @@ function Grade(props) {
 
 class GradeTable extends React.Component {
   render() {
-    const gradeElements = this.props.grades.map(grade => <Grade key={grade.id} grade={grade} />);
+    const gradeElements = this.props.grades.map(grade => <Grade key={grade.id} grade={grade} onDelete={this.props.deleteGrade}/>);
     return (
       <table className="table table-hover">
         <thead className="thead-dark">

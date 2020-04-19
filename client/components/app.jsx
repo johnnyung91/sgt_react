@@ -8,6 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = { grades: [] };
     this.addGrade = this.addGrade.bind(this);
+    this.deleteGrade = this.deleteGrade.bind(this);
   }
 
   componentDidMount() {
@@ -64,7 +65,7 @@ class App extends React.Component {
         <hr/>
         <div className="row">
           <div className="col-lg-9">
-            <GradeTable grades={this.state.grades} onDelete={this.deleteGrade}/>
+            <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade}/>
           </div>
           <div className="col-lg-3">
             <GradeForm onSubmit={this.addGrade}/>
