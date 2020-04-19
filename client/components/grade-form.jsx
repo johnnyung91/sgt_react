@@ -63,7 +63,7 @@ class GradeForm extends React.Component {
         <h3 className="mb-2">Add Student</h3>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
-            <span className="input-group-text"><i className="fa fa-user"></i></span>
+            <span className="input-group-text"><i className="fa fa-user icon"></i></span>
           </div>
           <input
             required
@@ -78,7 +78,7 @@ class GradeForm extends React.Component {
         </div>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
-            <span className="input-group-text"><i className="fa fa-list"></i></span>
+            <span className="input-group-text"><i className="fa fa-list icon"></i></span>
           </div>
           <input
             required
@@ -93,7 +93,7 @@ class GradeForm extends React.Component {
         </div>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
-            <span className="input-group-text"><i className="fa fa-graduation-cap"></i></span>
+            <span className="input-group-text"><i className="fa fa-graduation-cap icon"></i></span>
           </div>
           <input
             required
