@@ -19,6 +19,16 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+  getAverageGrade() {
+    const allGrades = this.state.grades;
+    let total = 0;
+    for (let i = 0; i < allGrades.length; i++) {
+      total += allGrades[i].grade;
+    }
+    const average = (total / allGrades.length).toFixed(0);
+    return average;
+  }
+
   render() {
     return (
       <div className="container">
