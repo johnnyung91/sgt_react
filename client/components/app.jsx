@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { grades: [] };
+    this.addGrade = this.addGrade.bind(this);
   }
 
   componentDidMount() {
@@ -35,7 +36,6 @@ class App extends React.Component {
       },
       body: JSON.stringify(newGrade)
     };
-
     fetch('api/grades', req)
       .then(res => res.json())
       .then(dataNewGrade => this.setState({

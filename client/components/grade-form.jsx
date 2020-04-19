@@ -40,11 +40,6 @@ class GradeForm extends React.Component {
       grade: this.state.grade
     };
     this.props.onSubmit(newGrade);
-    this.setState({
-      name: '',
-      course: '',
-      grade: ''
-    });
   }
 
   render() {
