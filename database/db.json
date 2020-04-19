@@ -18,5 +18,11 @@
       "course": "JavaScript",
       "grade": 73
     },
+    {
+      "name": "Johnny",
+      "course": "js",
+      "grade": "100",
+      "id": 33
+    }
   ]
 }
