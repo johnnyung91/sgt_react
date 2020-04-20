@@ -1,34 +1,3 @@
 {
-  "grades": [
-    {
-      "id": 5,
-      "name": "Kyle Simpson",
-      "course": "JavaScript",
-      "grade": 95
-    },
-    {
-      "id": 12,
-      "name": "Brendan Eich",
-      "course": "JavaScript",
-      "grade": 85
-    },
-    {
-      "id": 32,
-      "name": "Douglas Crockford",
-      "course": "JavaScript",
-      "grade": 73
-    },
-    {
-      "name": "Grant Kang",
-      "course": "JavaScript",
-      "grade": "100",
-      "id": 33
-    },
-    {
-      "name": "Johnny Ung",
-      "course": "JavaScript",
-      "grade": "50",
-      "id": 34
-    }
-  ]
+  "grades": []
 }

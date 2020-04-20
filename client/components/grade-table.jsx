@@ -24,20 +24,22 @@ class GradeTable extends React.Component {
       noGrades = <p className="mt-3 pl-2">No Grades Displayed</p>;
     }
     return (
-      <table className="table table-hover">
-        <thead className="thead-dark">
-          <tr>
-            <th scope='col'>Student Name</th>
-            <th scope='col'>Student Course</th>
-            <th scope='col'>Grade</th>
-            <th scope='col'>Operations</th>
-          </tr>
-        </thead>
-        <tbody>
-          {gradeElements}
-        </tbody>
+      <>
+        <table className="table table-hover">
+          <thead className="thead-dark">
+            <tr>
+              <th scope='col'>Student Name</th>
+              <th scope='col'>Student Course</th>
+              <th scope='col'>Grade</th>
+              <th scope='col'>Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            {gradeElements}
+          </tbody>
+        </table>
         {noGrades}
-      </table>
+      </>
     );
   }
 }
