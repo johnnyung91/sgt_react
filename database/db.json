@@ -17,18 +17,6 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 73
-    },
-    {
-      "name": "Grant Kang",
-      "course": "JavaScript",
-      "grade": "100",
-      "id": 33
-    },
-    {
-      "name": "Johnny Ung",
-      "course": "JavaScript",
-      "grade": "80",
-      "id": 34
     }
   ]
 }

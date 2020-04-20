@@ -63,7 +63,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header heading="Student Grade Table" averageHeading="Average Grade: " averageGrade={this.getAverageGrade()}/>
-        <hr/>
+        <hr className="mt-2"/>
         <div className="row">
           <div className="col-lg-9">
             <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade}/>
