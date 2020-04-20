@@ -50,9 +50,12 @@ class App extends React.Component {
       method: 'DELETE'
     };
     fetch(`api/grades/${id}`, req)
-      .then(res => res.json())
-      // eslint-disable-next-line no-console
-      .then(data => console.log(this.state))
+      .then(() => {
+        const filtered = this.state.grades.filter(grade => grade.id !== id);
+        this.setState({
+          grades: filtered
+        });
+      })
       .catch(err => console.error(err));
   }
 
