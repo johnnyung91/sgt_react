@@ -18,9 +18,10 @@ function Grade(props) {
 
 class GradeTable extends React.Component {
   render() {
-    let gradeElements = this.props.grades.map(grade => <Grade key={grade.id} grade={grade} onDelete={this.props.deleteGrade}/>);
+    let noGrades;
+    const gradeElements = this.props.grades.map(grade => <Grade key={grade.id} grade={grade} onDelete={this.props.deleteGrade}/>);
     if (!gradeElements.length) {
-      gradeElements = <p className="mt-3 pl-2">No Grades Displayed</p>;
+      noGrades = <p className="mt-3 pl-2">No Grades Displayed</p>;
     }
     return (
       <table className="table table-hover">
@@ -35,6 +36,7 @@ class GradeTable extends React.Component {
         <tbody>
           {gradeElements}
         </tbody>
+        {noGrades}
       </table>
     );
   }

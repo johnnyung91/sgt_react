@@ -23,6 +23,12 @@
       "course": "JavaScript",
       "grade": "100",
       "id": 33
+    },
+    {
+      "name": "Johnny Ung",
+      "course": "JavaScript",
+      "grade": "50",
+      "id": 34
     }
   ]
 }
