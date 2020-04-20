@@ -45,17 +45,15 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  deleteGrade() {
-    // eslint-disable-next-line no-console
-    console.log('hello world');
-    // const req = {
-    //   method: 'DELETE'
-    // };
-    // fetch(`api/grades/${id}`, req)
-    //   .then(res => res.json())
-    //   // eslint-disable-next-line no-console
-    //   .then(data => console.log(data))
-    //   .catch(err => console.error(err));
+  deleteGrade(id) {
+    const req = {
+      method: 'DELETE'
+    };
+    fetch(`api/grades/${id}`, req)
+      .then(res => res.json())
+      // eslint-disable-next-line no-console
+      .then(data => console.log(this.state))
+      .catch(err => console.error(err));
   }
 
   render() {
