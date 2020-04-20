@@ -20,19 +20,22 @@ class GradeTable extends React.Component {
   render() {
     const gradeElements = this.props.grades.map(grade => <Grade key={grade.id} grade={grade} onDelete={this.props.deleteGrade}/>);
     return (
-      <table className="table table-hover">
-        <thead className="thead-dark">
-          <tr>
-            <th scope='col'>Student Name</th>
-            <th scope='col'>Student Course</th>
-            <th scope='col'>Grade</th>
-            <th scope='col'>Operations</th>
-          </tr>
-        </thead>
-        <tbody>
-          {gradeElements}
-        </tbody>
-      </table>
+      <>
+        <table className="table table-hover">
+          <thead className="thead-dark">
+            <tr>
+              <th scope='col'>Student Name</th>
+              <th scope='col'>Student Course</th>
+              <th scope='col'>Grade</th>
+              <th scope='col'>Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            {gradeElements}
+          </tbody>
+        </table>
+        {!gradeElements.length ? <p>No Grades Available</p> : <p className="d-none">No Grades Available</p>}
+      </>
     );
   }
 }
