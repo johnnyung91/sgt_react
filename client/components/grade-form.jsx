@@ -69,9 +69,8 @@ class GradeForm extends React.Component {
             required
             type="text"
             className="form-control"
-            id="student-name-course"
-            placeholder="Student Course"
-            name="course"
+            placeholder="Student Name"
+            name="name"
             value={this.state.name}
             onChange={this.handleName}
           />
@@ -84,7 +83,6 @@ class GradeForm extends React.Component {
             required
             type="text"
             className="form-control"
-            id="student-name-course"
             placeholder="Student Course"
             name="course"
             value={this.state.course}
@@ -99,7 +97,6 @@ class GradeForm extends React.Component {
             required
             type="text"
             className="form-control"
-            id="student-name-grade"
             placeholder="Student Grade"
             name="grade"
             value={this.state.grade}
