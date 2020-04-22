@@ -14,28 +14,15 @@ class GradeForm extends React.Component {
       course: '',
       grade: ''
     };
-    this.handleName = this.handleName.bind(this);
-    this.handleCourse = this.handleCourse.bind(this);
-    this.handleGrade = this.handleGrade.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleName(event) {
+  handleChange(event) {
+    const input = event.target.name;
     this.setState({
-      name: event.target.value
-    });
-  }
-
-  handleCourse(event) {
-    this.setState({
-      course: event.target.value
-    });
-  }
-
-  handleGrade(event) {
-    this.setState({
-      grade: event.target.value
+      [input]: event.target.value
     });
   }
 
@@ -47,15 +34,15 @@ class GradeForm extends React.Component {
       grade: this.state.grade
     };
     this.props.onSubmit(newGrade);
-    this.setState({
-      name: '',
-      course: '',
-      grade: ''
-    });
+    this.resetState();
   }
 
   handleReset(event) {
     event.preventDefault();
+    this.resetState();
+  }
+
+  resetState() {
     this.setState({
       name: '',
       course: '',
@@ -69,15 +56,15 @@ class GradeForm extends React.Component {
         <h3 className="mb-2">Add Student</h3>
         <div className="input-group mb-3">
           <span className="input-group-prepend input-group-text"><i className="fa fa-user icon"></i></span>
-          <Input placeholder="Student Name" name="name" value={this.state.name} onChange={this.handleName} />
+          <Input placeholder="Student Name" name="name" value={this.state.name} onChange={this.handleChange} />
         </div>
         <div className="input-group mb-3">
           <span className="input-group-prepend input-group-text"><i className="fa fa-list icon"></i></span>
-          <Input placeholder="Student Course" name="course" value={this.state.course} onChange={this.handleCourse} />
+          <Input placeholder="Student Course" name="course" value={this.state.course} onChange={this.handleChange} />
         </div>
         <div className="input-group mb-3">
           <span className="input-group-prepend input-group-text"><i className="fa fa-graduation-cap icon"></i></span>
-          <Input placeholder="Student Grade" name="grade" value={this.state.grade} onChange={this.handleGrade} />
+          <Input placeholder="Student Grade" name="grade" value={this.state.grade} onChange={this.handleChange} />
         </div>
         <div className="input-buttons">
           <input className="btn btn-success mr-2" type="submit" value="Add" />
