@@ -53,9 +53,9 @@ class GradeForm extends React.Component {
     });
   }
 
-  componentDidUpdate(pP) {
+  componentDidUpdate(prevProp) {
     const { name, course, grade } = this.props.gradeToEdit;
-    if (this.props.gradeToEdit !== pP.gradeToEdit) {
+    if (this.props.gradeToEdit !== prevProp.gradeToEdit) {
       this.setState({
         name: name,
         course: course,
