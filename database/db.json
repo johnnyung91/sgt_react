@@ -1,28 +1,40 @@
 {
   "grades": [
     {
-      "name": "Michael Zhu",
+      "name": "Steven Tran",
       "course": "JavaScript",
-      "grade": "75",
-      "id": 1
+      "grade": "90",
+      "id": 4
+    },
+    {
+      "name": "Phu Trieu",
+      "course": "JavaScript",
+      "grade": "70",
+      "id": 5
+    },
+    {
+      "name": "Julie Chung",
+      "course": "JavaScript",
+      "grade": "100",
+      "id": 6
     },
     {
       "name": "Johnny Ung",
       "course": "JavaScript",
       "grade": "85",
-      "id": 2
+      "id": 7
     },
     {
       "name": "Grant Kang",
       "course": "JavaScript",
       "grade": "100",
-      "id": 3
+      "id": 8
     },
     {
-      "name": "Steven Tran",
+      "name": "Kevin Akahoshi",
       "course": "JavaScript",
-      "grade": "80",
-      "id": 4
+      "grade": "100",
+      "id": 9
     }
   ]
 }
