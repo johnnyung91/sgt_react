@@ -107,7 +107,8 @@ class GradeForm extends React.Component {
           <span className="input-group-prepend input-group-text"><i className="fa fa-graduation-cap icon"></i></span>
           <input
             required
-            type="text"
+            type="number"
+            max="100"
             className="form-control"
             placeholder="Student Grade"
             name="grade"

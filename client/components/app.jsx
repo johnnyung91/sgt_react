@@ -51,13 +51,13 @@ class App extends React.Component {
   }
 
   deleteGrade(id) {
-    const { filter } = this.state.grades;
+    const { grades } = this.state;
     const req = {
       method: 'DELETE'
     };
     fetch(`api/grades/${id}`, req)
       .then(() => {
-        const filtered = filter(grade => grade.id !== id);
+        const filtered = grades.filter(grade => grade.id !== id);
         this.setState({
           grades: filtered
         });
