@@ -6,7 +6,8 @@ class GradeForm extends React.Component {
     this.state = {
       name: '',
       course: '',
-      grade: ''
+      grade: '',
+      isEditing: false
     };
     this.handleAdd = this.handleAdd.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -51,12 +52,25 @@ class GradeForm extends React.Component {
     });
   }
 
+  componentDidUpdate(pP) {
+    const { name, course, grade } = this.props.gradeToEdit;
+    if (this.props.gradeToEdit !== pP.gradeToEdit) {
+      this.setState({
+        name: name,
+        course: course,
+        grade: grade,
+        isEditing: true
+      });
+    }
+  }
+
   render() {
-    const { name, course, grade } = this.state;
+    const { name, course, grade, isEditing } = this.state;
+    const formHeader = isEditing ? 'Update' : 'Add';
 
     return (
       <form onSubmit={this.handleAdd} onReset={this.handleReset}>
-        <h3 className="mb-2">Add Student</h3>
+        <h3 className="mb-2">{formHeader} Student</h3>
         <div className="input-group mb-3">
           <span className="input-group-prepend input-group-text"><i className="fa fa-user icon"></i></span>
           <input
@@ -66,7 +80,7 @@ class GradeForm extends React.Component {
             placeholder="Student Name"
             name="name"
             value={name}
-            onChange={this.handleName}
+            onChange={this.handleChange}
           />
         </div>
         <div className="input-group mb-3">

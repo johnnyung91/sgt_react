@@ -17,6 +17,18 @@
       "course": "React",
       "grade": "100",
       "id": 6
+    },
+    {
+      "name": "Johnny Ung",
+      "course": "JavaScript",
+      "grade": "85",
+      "id": 7
+    },
+    {
+      "name": "Grant Kang",
+      "course": "JavaScript",
+      "grade": "100",
+      "id": 8
     }
   ]
 }
