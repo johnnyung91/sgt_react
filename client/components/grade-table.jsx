@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Grade(props) {
-  const { name, course, grade } = props.grade;
+  const { name, course, grade, id } = props.grade;
   const { onDelete, editGradeState } = props;
 
   return (
@@ -11,7 +11,7 @@ function Grade(props) {
       <td>{grade}</td>
       <td>
         <button className="btn btn-success mr-2" onClick={() => editGradeState(props.grade) }>Edit</button>
-        <button className="btn btn-danger" onClick={() => onDelete(grade.id)}>Delete</button>
+        <button className="btn btn-danger" onClick={() => onDelete(id)}>Delete</button>
       </td>
     </tr>
   );

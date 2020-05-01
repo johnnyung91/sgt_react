@@ -28,9 +28,9 @@ class App extends React.Component {
   }
 
   getAverageGrade() {
-    const allGrades = this.state.grades;
-    const total = allGrades.reduce((max, cur) => max + Number(cur.grade), 0);
-    const average = (total / allGrades.length).toFixed(0);
+    const { grades } = this.state;
+    const total = grades.reduce((max, cur) => max + Number(cur.grade), 0);
+    const average = (total / grades.length).toFixed(0);
     return Number(average);
   }
 

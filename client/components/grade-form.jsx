@@ -12,19 +12,12 @@ class GradeForm extends React.Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleName = this.handleName.bind(this);
   }
 
   handleChange(event) {
     const input = event.target.name;
     this.setState({
       [input]: event.target.value
-    });
-  }
-
-  handleName(event) {
-    this.setState({
-      name: event.target.value
     });
   }
 
