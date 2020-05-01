@@ -11,12 +11,19 @@ class GradeForm extends React.Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleName = this.handleName.bind(this);
   }
 
   handleChange(event) {
     const input = event.target.name;
     this.setState({
       [input]: event.target.value
+    });
+  }
+
+  handleName(event) {
+    this.setState({
+      name: event.target.value
     });
   }
 
@@ -46,10 +53,6 @@ class GradeForm extends React.Component {
 
   render() {
     const { name, course, grade } = this.state;
-    const { gradeToEdit } = this.props;
-    const formName = !gradeToEdit.id ? name : gradeToEdit.name;
-    const formCourse = !gradeToEdit.id ? course : gradeToEdit.course;
-    const formGrade = !gradeToEdit.id ? grade : gradeToEdit.grade;
 
     return (
       <form onSubmit={this.handleAdd} onReset={this.handleReset}>
@@ -62,7 +65,7 @@ class GradeForm extends React.Component {
             className="form-control"
             placeholder="Student Name"
             name="name"
-            value={formName}
+            value={name}
             onChange={this.handleName}
           />
         </div>
@@ -74,8 +77,8 @@ class GradeForm extends React.Component {
             className="form-control"
             placeholder="Student Course"
             name="course"
-            value={formCourse}
-            onChange={this.handleCourse}
+            value={course}
+            onChange={this.handleChange}
           />
         </div>
         <div className="input-group mb-3">
@@ -86,8 +89,8 @@ class GradeForm extends React.Component {
             className="form-control"
             placeholder="Student Grade"
             name="grade"
-            value={formGrade}
-            onChange={this.handleGrade}
+            value={grade}
+            onChange={this.handleChange}
           />
         </div>
         <div className="input-buttons">
