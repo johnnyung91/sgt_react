@@ -1,16 +1,17 @@
 import React from 'react';
 
 function Grade(props) {
-  const name = props.grade.name;
-  const course = props.grade.course;
-  const grade = props.grade.grade;
+  const { name, course, grade } = props.grade;
+  const { onDelete, editGradeState } = props;
+
   return (
     <tr>
       <td>{name}</td>
       <td>{course}</td>
       <td>{grade}</td>
       <td>
-        <button className="btn btn-danger" onClick={() => props.onDelete(props.grade.id)}>Delete</button>
+        <button className="btn btn-success mr-2" onClick={() => editGradeState(props.grade) }>Edit</button>
+        <button className="btn btn-danger" onClick={() => onDelete(grade.id)}>Delete</button>
       </td>
     </tr>
   );
@@ -18,8 +19,10 @@ function Grade(props) {
 
 class GradeTable extends React.Component {
   render() {
+    const { grades, deleteGrade, editGradeState } = this.props;
+
     let noGrades;
-    const gradeElements = this.props.grades.map(grade => <Grade key={grade.id} grade={grade} onDelete={this.props.deleteGrade}/>);
+    const gradeElements = grades.map(grade => <Grade key={grade.id} grade={grade} onDelete={deleteGrade} editGradeState={editGradeState}/>);
     if (!gradeElements.length) {
       noGrades = <p className="mt-3 pl-2">No Grades Displayed</p>;
     }

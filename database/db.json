@@ -1,28 +1,22 @@
 {
   "grades": [
     {
-      "name": "Michael Zhu",
-      "course": "JavaScript",
-      "grade": "75",
-      "id": 1
-    },
-    {
-      "name": "Johnny Ung",
-      "course": "JavaScript",
-      "grade": "85",
-      "id": 2
-    },
-    {
-      "name": "Grant Kang",
-      "course": "JavaScript",
-      "grade": "100",
-      "id": 3
-    },
-    {
       "name": "Steven Tran",
       "course": "JavaScript",
       "grade": "80",
       "id": 4
+    },
+    {
+      "name": "Phu Trieu",
+      "course": "JavaSript",
+      "grade": "70",
+      "id": 5
+    },
+    {
+      "name": "Julie Chung",
+      "course": "React",
+      "grade": "100",
+      "id": 6
     }
   ]
 }

@@ -6,9 +6,13 @@ import GradeForm from './grade-form';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { grades: [] };
+    this.state = {
+      grades: [],
+      gradeToEdit: {}
+    };
     this.addGrade = this.addGrade.bind(this);
     this.deleteGrade = this.deleteGrade.bind(this);
+    this.editGradeState = this.editGradeState.bind(this);
   }
 
   componentDidMount() {
@@ -46,17 +50,24 @@ class App extends React.Component {
   }
 
   deleteGrade(id) {
+    const { filter } = this.state.grades;
     const req = {
       method: 'DELETE'
     };
     fetch(`api/grades/${id}`, req)
       .then(() => {
-        const filtered = this.state.grades.filter(grade => grade.id !== id);
+        const filtered = filter(grade => grade.id !== id);
         this.setState({
           grades: filtered
         });
       })
       .catch(err => console.error(err));
+  }
+
+  editGradeState(data) {
+    this.setState({
+      gradeToEdit: data
+    });
   }
 
   render() {
@@ -66,10 +77,10 @@ class App extends React.Component {
         <hr className="mt-2"/>
         <div className="row">
           <div className="col-lg-9">
-            <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade}/>
+            <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade} editGradeState={this.editGradeState}/>
           </div>
           <div className="col-lg-3">
-            <GradeForm onSubmit={this.addGrade}/>
+            <GradeForm onSubmit={this.addGrade} gradeToEdit={this.state.gradeToEdit}/>
           </div>
         </div>
       </div>
