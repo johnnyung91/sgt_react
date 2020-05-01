@@ -28,9 +28,9 @@ class App extends React.Component {
   }
 
   getAverageGrade() {
-    const allGrades = this.state.grades;
-    const total = allGrades.reduce((max, cur) => max + Number(cur.grade), 0);
-    const average = (total / allGrades.length).toFixed(0);
+    const { grades } = this.state;
+    const total = grades.reduce((max, cur) => max + Number(cur.grade), 0);
+    const average = (total / grades.length).toFixed(0);
     return Number(average);
   }
 
@@ -51,13 +51,13 @@ class App extends React.Component {
   }
 
   deleteGrade(id) {
-    const { filter } = this.state.grades;
+    const { grades } = this.state;
     const req = {
       method: 'DELETE'
     };
     fetch(`api/grades/${id}`, req)
       .then(() => {
-        const filtered = filter(grade => grade.id !== id);
+        const filtered = grades.filter(grade => grade.id !== id);
         this.setState({
           grades: filtered
         });

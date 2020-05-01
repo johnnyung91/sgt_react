@@ -12,19 +12,12 @@ class GradeForm extends React.Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleName = this.handleName.bind(this);
   }
 
   handleChange(event) {
     const input = event.target.name;
     this.setState({
       [input]: event.target.value
-    });
-  }
-
-  handleName(event) {
-    this.setState({
-      name: event.target.value
     });
   }
 
@@ -60,9 +53,9 @@ class GradeForm extends React.Component {
     });
   }
 
-  componentDidUpdate(pP) {
+  componentDidUpdate(prevProp) {
     const { name, course, grade } = this.props.gradeToEdit;
-    if (this.props.gradeToEdit !== pP.gradeToEdit) {
+    if (this.props.gradeToEdit !== prevProp.gradeToEdit) {
       this.setState({
         name: name,
         course: course,
@@ -107,7 +100,8 @@ class GradeForm extends React.Component {
           <span className="input-group-prepend input-group-text"><i className="fa fa-graduation-cap icon"></i></span>
           <input
             required
-            type="text"
+            type="number"
+            max="100"
             className="form-control"
             placeholder="Student Grade"
             name="grade"
