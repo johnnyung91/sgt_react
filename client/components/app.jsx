@@ -13,6 +13,7 @@ class App extends React.Component {
     this.addGrade = this.addGrade.bind(this);
     this.deleteGrade = this.deleteGrade.bind(this);
     this.editGradeState = this.editGradeState.bind(this);
+    this.updateGrade = this.updateGrade.bind(this);
   }
 
   componentDidMount() {
@@ -71,8 +72,25 @@ class App extends React.Component {
   }
 
   updateGrade(gradeObject) {
-    // eslint-disable-next-line no-console
-    console.log('Hello');
+    const { grades } = this.state;
+    const index = grades.findIndex(index => index.id === gradeObject.id);
+    const req = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/JSON'
+      },
+      body: JSON.stringify(gradeObject)
+    };
+    fetch(`/api/grades/${gradeObject.id}`, req)
+      .then(res => res.json())
+      .then(updatedGrade => {
+        const newGrades = grades.slice(0);
+        newGrades[index] = updatedGrade;
+        this.setState({
+          grades: newGrades
+        });
+      })
+      .catch(err => console.error(err));
   }
 
   render() {

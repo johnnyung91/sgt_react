@@ -3,18 +3,18 @@
     {
       "name": "Steven Tran",
       "course": "JavaScript",
-      "grade": "80",
+      "grade": "90",
       "id": 4
     },
     {
       "name": "Phu Trieu",
-      "course": "JavaSript",
+      "course": "JavaScript",
       "grade": "70",
       "id": 5
     },
     {
       "name": "Julie Chung",
-      "course": "React",
+      "course": "JavaScript",
       "grade": "100",
       "id": 6
     },
@@ -32,7 +32,7 @@
     },
     {
       "name": "Kevin Akahoshi",
-      "course": "React",
+      "course": "JavaScript",
       "grade": "100",
       "id": 9
     }
