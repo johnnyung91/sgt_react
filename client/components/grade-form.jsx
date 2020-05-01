@@ -48,7 +48,8 @@ class GradeForm extends React.Component {
     this.setState({
       name: '',
       course: '',
-      grade: ''
+      grade: '',
+      isEditing: false
     });
   }
 
@@ -108,7 +109,7 @@ class GradeForm extends React.Component {
           />
         </div>
         <div className="input-buttons">
-          <button className="btn btn-success mr-2" type="submit">Add</button>
+          <button className="btn btn-success mr-2" type="submit">{formHeader}</button>
           <button className="btn btn-outline-secondary" type="reset">Cancel</button>
         </div>
       </form>
