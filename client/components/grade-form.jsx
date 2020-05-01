@@ -29,13 +29,20 @@ class GradeForm extends React.Component {
   }
 
   handleAdd(event) {
+    const { name, course, grade, isEditing } = this.state;
     event.preventDefault();
     const newGrade = {
-      name: this.state.name,
-      course: this.state.course,
-      grade: this.state.grade
+      id: this.props.gradeToEdit.id,
+      name: name,
+      course: course,
+      grade: grade
     };
-    this.props.onSubmit(newGrade);
+    if (!isEditing) {
+      this.props.onSubmit(newGrade);
+    } else {
+      this.props.onUpdate(newGrade);
+    }
+
     this.resetState();
   }
 

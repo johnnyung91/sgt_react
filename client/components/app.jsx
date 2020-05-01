@@ -70,6 +70,11 @@ class App extends React.Component {
     });
   }
 
+  updateGrade(gradeObject) {
+    // eslint-disable-next-line no-console
+    console.log('Hello');
+  }
+
   render() {
     return (
       <div className="container">
@@ -80,7 +85,7 @@ class App extends React.Component {
             <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade} editGradeState={this.editGradeState}/>
           </div>
           <div className="col-lg-3">
-            <GradeForm onSubmit={this.addGrade} gradeToEdit={this.state.gradeToEdit}/>
+            <GradeForm onSubmit={this.addGrade} onUpdate={this.updateGrade} gradeToEdit={this.state.gradeToEdit}/>
           </div>
         </div>
       </div>

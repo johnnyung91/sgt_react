@@ -29,6 +29,12 @@
       "course": "JavaScript",
       "grade": "100",
       "id": 8
+    },
+    {
+      "name": "Kevin Akahoshi",
+      "course": "React",
+      "grade": "100",
+      "id": 9
     }
   ]
 }
