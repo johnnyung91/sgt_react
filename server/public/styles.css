@@ -2,17 +2,38 @@
     width: 16px;
 }
 
+.operation {
+    font-size: 25px;
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
 .blue {
     color: dodgerblue;
+}
+
+.blue:hover {
+    opacity: 1;
+    color: blue;
 }
 
 .gray {
     color: gray;
 }
 
+.gray:hover {
+    color: #2C2C2C;
+    opacity: 1;
+}
+
 .pointer {
     cursor: pointer;
 }
+
+td {
+    padding: auto;
+}
+
 
 @media only screen and (max-width: 992px) {
     h3, h1 {
