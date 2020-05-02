@@ -10,8 +10,8 @@ function Grade(props) {
       <td>{course}</td>
       <td>{grade}</td>
       <td>
-        <i className="fas fa-edit fa-lg mr-3 blue" onClick={() => editGradeState(props.grade) }></i>
-        <i className="fas fa-trash fa-lg mr-3 gray" onClick={() => onDelete(id)}></i>
+        <i className="fas fa-edit fa-lg mr-3 blue pointer" onClick={() => editGradeState(props.grade) }></i>
+        <i className="fas fa-trash fa-lg mr-3 gray pointer" onClick={() => onDelete(id)}></i>
       </td>
     </tr>
   );

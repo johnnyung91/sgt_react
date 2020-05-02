@@ -10,6 +10,7 @@ class GradeForm extends React.Component {
       isEditing: false
     };
     this.handleAdd = this.handleAdd.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -22,20 +23,27 @@ class GradeForm extends React.Component {
   }
 
   handleAdd(event) {
-    const { name, course, grade, isEditing } = this.state;
+    const { name, course, grade } = this.state;
     event.preventDefault();
     const newGrade = {
+      name: name,
+      course: course,
+      grade: grade
+    };
+    this.props.onSubmit(newGrade);
+    this.resetState();
+  }
+
+  handleUpdate(event) {
+    const { name, course, grade } = this.state;
+    event.preventDefault();
+    const updateGrade = {
       id: this.props.gradeToEdit.id,
       name: name,
       course: course,
       grade: grade
     };
-    if (!isEditing) {
-      this.props.onSubmit(newGrade);
-    } else {
-      this.props.onUpdate(newGrade);
-    }
-
+    this.props.onUpdate(updateGrade);
     this.resetState();
   }
 
@@ -68,9 +76,10 @@ class GradeForm extends React.Component {
   render() {
     const { name, course, grade, isEditing } = this.state;
     const formHeader = isEditing ? 'Update' : 'Add';
+    const formButton = isEditing ? this.handleUpdate : this.handleAdd;
 
     return (
-      <form onSubmit={this.handleAdd} onReset={this.handleReset}>
+      <form onSubmit={formButton} onReset={this.handleReset}>
         <h3 className="mb-2">{formHeader} Student</h3>
         <div className="input-group mb-3">
           <span className="input-group-prepend input-group-text"><i className="fa fa-user icon"></i></span>
